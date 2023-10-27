@@ -1,22 +1,22 @@
-- hosts: all
-  tasks:
-    - name: stop container 
-      shell: docker container stop demo-container
-    - name: remove container
-      shell: docker container rm demo-container
-    - name: remove docker image
-      shell: docker image rm oalalif/demo-2
-    - name: create new container
-      shell: docker container run -itd --name adja-container oalalif/adja-1
-
-# untuk update
 # - hosts: all
 #   tasks:
-#     - name: stop container
-#       shell: docker container stop adja-container
+#     - name: stop container 
+#       shell: docker container stop demo-container
 #     - name: remove container
-#       shell: docker container rm adja-container
+#       shell: docker container rm demo-container
 #     - name: remove docker image
-#       shell: docker image rm oalalif/adja-1
+#       shell: docker image rm oalalif/demo-2
 #     - name: create new container
 #       shell: docker container run -itd --name adja-container oalalif/adja-1
+
+# untuk update
+- hosts: all
+  tasks:
+    - name: stop container
+      shell: docker container stop adja-container
+    - name: remove container
+      shell: docker container rm adja-container
+    - name: remove docker image
+      shell: docker image rm oalalif/adja-1
+    - name: create new container
+      shell: docker container run -itd --name adja-container oalalif/adja-1
